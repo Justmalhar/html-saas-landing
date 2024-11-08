@@ -1,96 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">Landing Page</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#" id="nav-logo" class="text-xl font-bold">Logo</a>
+        </div>
+        <div class="hidden md:flex space-x-4" id="nav-links">
+          <!-- Navigation links will be populated here -->
+        </div>
+        <div class="flex items-center md:hidden">
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="text-gray-800 hover:text-gray-600 focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1" id="mobile-nav-links">
+        <!-- Mobile navigation links will be populated here -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-20 flex flex-col-reverse lg:flex-row items-center">
+      <div class="w-full lg:w-1/2">
+        <h1 class="text-4xl font-bold mb-4" id="hero-title">Your Product</h1>
+        <p class="text-lg mb-6" id="hero-subtitle">Your subheadline goes here.</p>
+        <a href="#" id="hero-cta" class="bg-blue-600 text-white px-6 py-3 rounded-md text-lg">Call to Action</a>
+      </div>
+      <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+        <!-- Hero Image -->
+        <img src="" alt="Hero Image" id="hero-image" class="w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap items-center justify-center space-x-4" id="social-proof">
+        <!-- Social proof logos will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" id="benefits-title">Benefits</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="benefits-list">
+        <!-- Benefits will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" id="features-title">Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="features-list">
+        <!-- Features will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" id="how-it-works-title">How It Works</h2>
+      <div class="flex flex-col md:flex-row md:space-x-4" id="how-it-works-steps">
+        <!-- Steps will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL/USE CASE -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" id="testimonials-title">Testimonials</h2>
+      <div class="space-y-8" id="testimonials-list">
+        <!-- Testimonials will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="bg-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4" id="cta-title">Ready to Get Started?</h2>
+      <a href="#" id="cta-button" class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg">Book a Demo</a>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" id="faqs-title">Frequently Asked Questions</h2>
+      <div class="space-y-6" id="faqs-list">
+        <!-- FAQs will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-gray-200 py-8">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div id="footer-links" class="mb-4 md:mb-0">
+        <!-- Footer links will be populated here -->
+      </div>
+      <div id="footer-contact">
+        <!-- Contact info will be populated here -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript to Populate Content -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('config.json')
+        .then(response => response.json())
+        .then(data => {
+          // NAV
+          document.getElementById('nav-logo').textContent = data.nav.logo;
+          const navLinks = data.nav.links;
+          const navContainer = document.getElementById('nav-links');
+          const mobileNavContainer = document.getElementById('mobile-nav-links');
+          navLinks.forEach(link => {
+            const a = document.createElement('a');
+            a.href = link.href;
+            a.textContent = link.text;
+            a.className = 'text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium';
+            navContainer.appendChild(a.cloneNode(true));
+            mobileNavContainer.appendChild(a);
+          });
+
+          // Mobile Menu Toggle
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+          });
+
+          // HERO
+          document.getElementById('page-title').textContent = data.hero.title;
+          document.getElementById('hero-title').textContent = data.hero.title;
+          document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
+          const heroCta = document.getElementById('hero-cta');
+          heroCta.textContent = data.hero.cta.text;
+          heroCta.href = data.hero.cta.href;
+          document.getElementById('hero-image').src = data.hero.image;
+          document.getElementById('hero-image').alt = data.hero.imageAlt || 'Hero Image';
+
+          // SOCIAL PROOF
+          const socialProofContainer = document.getElementById('social-proof');
+          data.socialProof.logos.forEach(logo => {
+            const img = document.createElement('img');
+            img.src = logo.src;
+            img.alt = logo.alt;
+            img.className = 'h-12';
+            socialProofContainer.appendChild(img);
+          });
+
+          // BENEFITS
+          document.getElementById('benefits-title').textContent = data.benefits.title;
+          const benefitsList = document.getElementById('benefits-list');
+          data.benefits.items.forEach(benefit => {
+            const div = document.createElement('div');
+            div.className = 'bg-white p-6 rounded-lg shadow';
+            div.innerHTML = \`
+              <h3 class="text-xl font-semibold mb-2">\${benefit.title}</h3>
+              <p>\${benefit.description}</p>
+            \`;
+            benefitsList.appendChild(div);
+          });
+
+          // FEATURES
+          document.getElementById('features-title').textContent = data.features.title;
+          const featuresList = document.getElementById('features-list');
+          data.features.items.forEach(feature => {
+            const div = document.createElement('div');
+            div.className = 'bg-white p-6 rounded-lg shadow';
+            div.innerHTML = \`
+              <h3 class="text-xl font-semibold mb-2">\${feature.title}</h3>
+              <p>\${feature.description}</p>
+            \`;
+            featuresList.appendChild(div);
+          });
+
+          // HOW IT WORKS
+          document.getElementById('how-it-works-title').textContent = data.howItWorks.title;
+          const stepsContainer = document.getElementById('how-it-works-steps');
+          data.howItWorks.steps.forEach(step => {
+            const div = document.createElement('div');
+            div.className = 'flex flex-col items-center text-center mb-8 md:mb-0';
+            div.innerHTML = \`
+              <div class="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center mb-4">\${step.number}</div>
+              <h3 class="text-xl font-semibold mb-2">\${step.title}</h3>
+              <p>\${step.description}</p>
+            \`;
+            stepsContainer.appendChild(div);
+          });
+
+          // TESTIMONIALS
+          document.getElementById('testimonials-title').textContent = data.testimonials.title;
+          const testimonialsList = document.getElementById('testimonials-list');
+          data.testimonials.items.forEach(testimonial => {
+            const div = document.createElement('div');
+            div.className = 'bg-white p-6 rounded-lg shadow';
+            div.innerHTML = \`
+              <p class="italic">"\${testimonial.quote}"</p>
+              <div class="mt-4">
+                <p class="font-semibold">\${testimonial.author}</p>
+                <p class="text-sm text-gray-500">\${testimonial.position}</p>
+              </div>
+            \`;
+            testimonialsList.appendChild(div);
+          });
+
+          // CALL TO ACTION
+          document.getElementById('cta-title').textContent = data.callToAction.title;
+          const ctaButton = document.getElementById('cta-button');
+          ctaButton.textContent = data.callToAction.button.text;
+          ctaButton.href = data.callToAction.button.href;
+
+          // FAQS
+          document.getElementById('faqs-title').textContent = data.faqs.title;
+          const faqsList = document.getElementById('faqs-list');
+          data.faqs.items.forEach(faq => {
+            const div = document.createElement('div');
+            div.className = 'border-b pb-4';
+            div.innerHTML = \`
+              <h3 class="text-xl font-semibold">\${faq.question}</h3>
+              <p class="mt-2">\${faq.answer}</p>
+            \`;
+            faqsList.appendChild(div);
+          });
+
+          // FOOTER
+          const footerLinks = data.footer.links;
+          const footerLinksContainer = document.getElementById('footer-links');
+          footerLinks.forEach(link => {
+            const a = document.createElement('a');
+            a.href = link.href;
+            a.textContent = link.text;
+            a.className = 'block text-gray-200 hover:text-white mb-2';
+            footerLinksContainer.appendChild(a);
+          });
+
+          const footerContact = data.footer.contact;
+          const footerContactContainer = document.getElementById('footer-contact');
+          footerContactContainer.innerHTML = \`
+            <p>\${footerContact.address}</p>
+            <p>\${footerContact.email}</p>
+            <p>\${footerContact.phone}</p>
+          \`;
+        })
+        .catch(error => console.error('Error loading config.json:', error));
+    });
+  </script>
+</body>
 </html>
