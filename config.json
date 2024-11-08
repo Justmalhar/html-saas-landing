@@ -2,10 +2,10 @@
   "nav": {
     "logo": "YourLogo",
     "links": [
-      { "text": "Home", "href": "#" },
-      { "text": "Features", "href": "#features" },
-      { "text": "Pricing", "href": "#pricing" },
-      { "text": "Contact", "href": "#contact" }
+      { "text": "Home", "href": "#", "icon": "fas fa-home" },
+      { "text": "Features", "href": "#features", "icon": "fas fa-cogs" },
+      { "text": "Pricing", "href": "#pricing", "icon": "fas fa-tags" },
+      { "text": "Contact", "href": "#contact", "icon": "fas fa-envelope" }
     ]
   },
   "hero": {
@@ -15,15 +15,15 @@
       "text": "Get Started",
       "href": "#"
     },
-    "image": "https://via.placeholder.com/600x400",
+    "image": "https://images.unsplash.com/photo-1581091012184-7f3ef68c27b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHNheXMlMjBmb3JkfGVufDB8fHx8MTY5MzUwNzQ2NQ&ixlib=rb-4.0.3&q=80&w=1080",
     "imageAlt": "Hero Image"
   },
   "socialProof": {
     "logos": [
-      { "src": "https://via.placeholder.com/100x50?text=Client+1", "alt": "Client 1" },
-      { "src": "https://via.placeholder.com/100x50?text=Client+2", "alt": "Client 2" },
-      { "src": "https://via.placeholder.com/100x50?text=Client+3", "alt": "Client 3" },
-      { "src": "https://via.placeholder.com/100x50?text=Client+4", "alt": "Client 4" }
+      { "src": "https://images.pexels.com/photos/3184313/pexels-photo-3184313.jpeg?auto=compress&cs=tinysrgb&w=200", "alt": "Client 1" },
+      { "src": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGxvZ29zfGVufDB8fHx8MTY5MzUwNzQ2NQ&ixlib=rb-4.0.3&q=80&w=200", "alt": "Client 2" },
+      { "src": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGxvZ29zfGVufDB8fHx8MTY5MzUwNzQ2NQ&ixlib=rb-4.0.3&q=80&w=200", "alt": "Client 3" },
+      { "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGxvZ29zfGVufDB8fHx8MTY5MzUwNzQ2NQ&ixlib=rb-4.0.3&q=80&w=200", "alt": "Client 4" }
     ]
   },
   "benefits": {
@@ -31,19 +31,23 @@
     "items": [
       {
         "title": "Benefit One",
-        "description": "Description of benefit one and how it helps the user."
+        "description": "Description of benefit one and how it helps the user.",
+        "icon": "fas fa-chart-line"
       },
       {
         "title": "Benefit Two",
-        "description": "Description of benefit two and how it improves the user's situation."
+        "description": "Description of benefit two and how it improves the user's situation.",
+        "icon": "fas fa-lock"
       },
       {
         "title": "Benefit Three",
-        "description": "Description of benefit three highlighting its advantages."
+        "description": "Description of benefit three highlighting its advantages.",
+        "icon": "fas fa-users"
       },
       {
         "title": "Benefit Four",
-        "description": "Description of benefit four focusing on user gains."
+        "description": "Description of benefit four focusing on user gains.",
+        "icon": "fas fa-thumbs-up"
       }
     ]
   },
@@ -52,27 +56,33 @@
     "items": [
       {
         "title": "Feature One",
-        "description": "Detailed explanation of feature one."
+        "description": "Detailed explanation of feature one.",
+        "icon": "fas fa-mobile-alt"
       },
       {
         "title": "Feature Two",
-        "description": "Detailed explanation of feature two."
+        "description": "Detailed explanation of feature two.",
+        "icon": "fas fa-cloud"
       },
       {
         "title": "Feature Three",
-        "description": "Detailed explanation of feature three."
+        "description": "Detailed explanation of feature three.",
+        "icon": "fas fa-shield-alt"
       },
       {
         "title": "Feature Four",
-        "description": "Detailed explanation of feature four."
+        "description": "Detailed explanation of feature four.",
+        "icon": "fas fa-bolt"
       },
       {
         "title": "Feature Five",
-        "description": "Detailed explanation of feature five."
+        "description": "Detailed explanation of feature five.",
+        "icon": "fas fa-heart"
       },
       {
         "title": "Feature Six",
-        "description": "Detailed explanation of feature six."
+        "description": "Detailed explanation of feature six.",
+        "icon": "fas fa-cogs"
       }
     ]
   },
@@ -81,18 +91,18 @@
     "steps": [
       {
         "number": "1",
-        "title": "Step One",
-        "description": "Description of step one in the process."
+        "title": "Sign Up",
+        "description": "Create your account and set up your profile."
       },
       {
         "number": "2",
-        "title": "Step Two",
-        "description": "Description of step two in the process."
+        "title": "Customize",
+        "description": "Tailor the features to fit your business needs."
       },
       {
         "number": "3",
-        "title": "Step Three",
-        "description": "Description of step three in the process."
+        "title": "Launch",
+        "description": "Deploy your solutions and start growing."
       }
     ]
   },
@@ -102,17 +112,20 @@
       {
         "quote": "This product has significantly improved our workflow!",
         "author": "Jane Doe",
-        "position": "CEO, Company A"
+        "position": "CEO, Company A",
+        "photo": "https://randomuser.me/api/portraits/women/44.jpg"
       },
       {
         "quote": "Outstanding service and support. Highly recommend!",
         "author": "John Smith",
-        "position": "CTO, Company B"
+        "position": "CTO, Company B",
+        "photo": "https://randomuser.me/api/portraits/men/46.jpg"
       },
       {
         "quote": "A game-changer in our industry. Exceptional quality.",
         "author": "Emily Johnson",
-        "position": "Marketing Director, Company C"
+        "position": "Marketing Director, Company C",
+        "photo": "https://randomuser.me/api/portraits/women/47.jpg"
       }
     ]
   },
