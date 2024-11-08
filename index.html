@@ -134,8 +134,15 @@
   <!-- JavaScript to Populate Content -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      fetch('https://raw.githubusercontent.com/Justmalhar/html-saas-landing/refs/heads/main/config.json')
-        .then(response => response.json())
+      const configUrl = 'https://raw.githubusercontent.com/Justmalhar/html-saas-landing/main/config.json'; // Corrected URL
+
+      fetch(configUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+        })
         .then(data => {
           // NAV
           document.getElementById('nav-logo').textContent = data.nav.logo;
@@ -184,10 +191,10 @@
           data.benefits.items.forEach(benefit => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow';
-            div.innerHTML = \`
-              <h3 class="text-xl font-semibold mb-2">\${benefit.title}</h3>
-              <p>\${benefit.description}</p>
-            \`;
+            div.innerHTML = `
+              <h3 class="text-xl font-semibold mb-2">${benefit.title}</h3>
+              <p>${benefit.description}</p>
+            `;
             benefitsList.appendChild(div);
           });
 
@@ -197,10 +204,10 @@
           data.features.items.forEach(feature => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow';
-            div.innerHTML = \`
-              <h3 class="text-xl font-semibold mb-2">\${feature.title}</h3>
-              <p>\${feature.description}</p>
-            \`;
+            div.innerHTML = `
+              <h3 class="text-xl font-semibold mb-2">${feature.title}</h3>
+              <p>${feature.description}</p>
+            `;
             featuresList.appendChild(div);
           });
 
@@ -210,11 +217,11 @@
           data.howItWorks.steps.forEach(step => {
             const div = document.createElement('div');
             div.className = 'flex flex-col items-center text-center mb-8 md:mb-0';
-            div.innerHTML = \`
-              <div class="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center mb-4">\${step.number}</div>
-              <h3 class="text-xl font-semibold mb-2">\${step.title}</h3>
-              <p>\${step.description}</p>
-            \`;
+            div.innerHTML = `
+              <div class="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center mb-4">${step.number}</div>
+              <h3 class="text-xl font-semibold mb-2">${step.title}</h3>
+              <p>${step.description}</p>
+            `;
             stepsContainer.appendChild(div);
           });
 
@@ -224,13 +231,13 @@
           data.testimonials.items.forEach(testimonial => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow';
-            div.innerHTML = \`
-              <p class="italic">"\${testimonial.quote}"</p>
+            div.innerHTML = `
+              <p class="italic">"${testimonial.quote}"</p>
               <div class="mt-4">
-                <p class="font-semibold">\${testimonial.author}</p>
-                <p class="text-sm text-gray-500">\${testimonial.position}</p>
+                <p class="font-semibold">${testimonial.author}</p>
+                <p class="text-sm text-gray-500">${testimonial.position}</p>
               </div>
-            \`;
+            `;
             testimonialsList.appendChild(div);
           });
 
@@ -246,10 +253,10 @@
           data.faqs.items.forEach(faq => {
             const div = document.createElement('div');
             div.className = 'border-b pb-4';
-            div.innerHTML = \`
-              <h3 class="text-xl font-semibold">\${faq.question}</h3>
-              <p class="mt-2">\${faq.answer}</p>
-            \`;
+            div.innerHTML = `
+              <h3 class="text-xl font-semibold">${faq.question}</h3>
+              <p class="mt-2">${faq.answer}</p>
+            `;
             faqsList.appendChild(div);
           });
 
@@ -266,11 +273,11 @@
 
           const footerContact = data.footer.contact;
           const footerContactContainer = document.getElementById('footer-contact');
-          footerContactContainer.innerHTML = \`
-            <p>\${footerContact.address}</p>
-            <p>\${footerContact.email}</p>
-            <p>\${footerContact.phone}</p>
-          \`;
+          footerContactContainer.innerHTML = `
+            <p>${footerContact.address}</p>
+            <p>${footerContact.email}</p>
+            <p>${footerContact.phone}</p>
+          `;
         })
         .catch(error => console.error('Error loading config.json:', error));
     });
