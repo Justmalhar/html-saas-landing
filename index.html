@@ -134,7 +134,7 @@
   <!-- JavaScript to Populate Content -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      fetch('config.json')
+      fetch('https://raw.githubusercontent.com/Justmalhar/html-saas-landing/refs/heads/main/config.json')
         .then(response => response.json())
         .then(data => {
           // NAV
