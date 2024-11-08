@@ -44,6 +44,7 @@
       <div class="flex justify-between h-16">
         <div class="flex-shrink-0 flex items-center">
           <a href="#" id="nav-logo" class="text-xl font-bold flex items-center">
+            <!-- Logo with Icon -->
             <i class="fas fa-rocket mr-2"></i> Logo
           </a>
         </div>
@@ -169,7 +170,7 @@
   <!-- JavaScript to Populate Content -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const configUrl = 'https://raw.githubusercontent.com/Justmalhar/html-saas-landing/refs/heads/main/config.json'; // Corrected URL
+      const configUrl = 'https://raw.githubusercontent.com/Justmalhar/html-saas-landing/main/config.json'; // Corrected URL
 
       fetch(configUrl)
         .then(response => {
@@ -180,14 +181,18 @@
         })
         .then(data => {
           // NAV
-          document.getElementById('nav-logo').innerHTML = \`<i class="fas fa-rocket mr-2"></i> \${data.nav.logo}\`;
+          // Update the nav logo with icon
+          document.getElementById('nav-logo').innerHTML = \`<i class="\${data.nav.logoIcon || 'fas fa-rocket'} mr-2"></i> \${data.nav.logo}\`;
+          
           const navLinks = data.nav.links;
           const navContainer = document.getElementById('nav-links');
           const mobileNavContainer = document.getElementById('mobile-nav-links');
+          
           navLinks.forEach(link => {
+            // Create navigation link with icon
             const a = document.createElement('a');
             a.href = link.href;
-            a.innerHTML = \`<i class="\${link.icon} mr-1"></i> \${link.text}\`; // Added icons
+            a.innerHTML = \`<i class="\${link.icon} mr-1"></i> \${link.text}\`;
             a.className = 'text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center';
             navContainer.appendChild(a.cloneNode(true));
             mobileNavContainer.appendChild(a);
@@ -204,11 +209,14 @@
           document.getElementById('page-title').textContent = data.hero.title;
           document.getElementById('hero-title').textContent = data.hero.title;
           document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
+          
           const heroCta = document.getElementById('hero-cta');
           heroCta.textContent = data.hero.cta.text;
           heroCta.href = data.hero.cta.href;
-          document.getElementById('hero-image').src = data.hero.image;
-          document.getElementById('hero-image').alt = data.hero.imageAlt || 'Hero Image';
+          
+          const heroImage = document.getElementById('hero-image');
+          heroImage.src = data.hero.image;
+          heroImage.alt = data.hero.imageAlt || 'Hero Image';
 
           // SOCIAL PROOF
           const socialProofContainer = document.getElementById('social-proof');
@@ -223,6 +231,7 @@
           // BENEFITS
           document.getElementById('benefits-title').textContent = data.benefits.title;
           const benefitsList = document.getElementById('benefits-list');
+          
           data.benefits.items.forEach(benefit => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow transform hover:-translate-y-2 transition duration-300';
@@ -239,6 +248,7 @@
           // FEATURES
           document.getElementById('features-title').textContent = data.features.title;
           const featuresList = document.getElementById('features-list');
+          
           data.features.items.forEach(feature => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow transform hover:-translate-y-2 transition duration-300';
@@ -255,6 +265,7 @@
           // HOW IT WORKS
           document.getElementById('how-it-works-title').textContent = data.howItWorks.title;
           const stepsContainer = document.getElementById('how-it-works-steps');
+          
           data.howItWorks.steps.forEach(step => {
             const div = document.createElement('div');
             div.className = 'flex flex-col items-center text-center mb-8 md:mb-0';
@@ -269,6 +280,7 @@
           // TESTIMONIALS
           document.getElementById('testimonials-title').textContent = data.testimonials.title;
           const testimonialsList = document.getElementById('testimonials-list');
+          
           data.testimonials.items.forEach(testimonial => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow';
@@ -294,6 +306,7 @@
           // FAQS
           document.getElementById('faqs-title').textContent = data.faqs.title;
           const faqsList = document.getElementById('faqs-list');
+          
           data.faqs.items.forEach(faq => {
             const div = document.createElement('div');
             div.className = 'border-b pb-4';
@@ -307,6 +320,7 @@
           // FOOTER
           const footerLinks = data.footer.links;
           const footerLinksContainer = document.getElementById('footer-links');
+          
           footerLinks.forEach(link => {
             const a = document.createElement('a');
             a.href = link.href;
