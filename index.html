@@ -4,17 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title id="page-title">Landing Page</title>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pZM6H7SW38XhQFZDlIrDYRF0hJ6I4Gf7zR+SxTgH0j0pBdL6LHKIbprZ6Qp+/9g1F86S1PtwJgK3Z3BjaT3pNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Tailwind Configuration for Animations -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'slide-in': 'slideIn 1s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideIn: {
+              '0%': { transform: 'translateY(-20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  
 </head>
 <body class="bg-gray-100 text-gray-800">
 
   <!-- NAV -->
-  <nav class="bg-white shadow">
+  <nav class="bg-white shadow animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex-shrink-0 flex items-center">
-          <a href="#" id="nav-logo" class="text-xl font-bold">Logo</a>
+          <a href="#" id="nav-logo" class="text-xl font-bold flex items-center">
+            <i class="fas fa-rocket mr-2"></i> Logo
+          </a>
         </div>
         <div class="hidden md:flex space-x-4" id="nav-links">
           <!-- Navigation links will be populated here -->
@@ -38,22 +69,24 @@
   </nav>
 
   <!-- HERO -->
-  <section class="bg-white">
+  <section class="bg-white animate-slide-in">
     <div class="max-w-7xl mx-auto px-4 py-20 flex flex-col-reverse lg:flex-row items-center">
       <div class="w-full lg:w-1/2">
         <h1 class="text-4xl font-bold mb-4" id="hero-title">Your Product</h1>
         <p class="text-lg mb-6" id="hero-subtitle">Your subheadline goes here.</p>
-        <a href="#" id="hero-cta" class="bg-blue-600 text-white px-6 py-3 rounded-md text-lg">Call to Action</a>
+        <a href="#" id="hero-cta" class="bg-blue-600 text-white px-6 py-3 rounded-md text-lg hover:bg-blue-700 transition duration-300">
+          Call to Action
+        </a>
       </div>
       <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
         <!-- Hero Image -->
-        <img src="" alt="Hero Image" id="hero-image" class="w-full h-auto">
+        <img src="" alt="Hero Image" id="hero-image" class="w-full h-auto rounded-lg shadow-lg">
       </div>
     </div>
   </section>
 
   <!-- SOCIAL PROOF -->
-  <section class="bg-gray-50 py-8">
+  <section class="bg-gray-50 py-8 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex flex-wrap items-center justify-center space-x-4" id="social-proof">
         <!-- Social proof logos will be populated here -->
@@ -62,9 +95,9 @@
   </section>
 
   <!-- BENEFITS -->
-  <section class="bg-white py-16">
+  <section class="bg-white py-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12" id="benefits-title">Benefits</h2>
+      <h2 class="text-3xl font-bold text-center mb-12" id="benefits-title">Why Choose Us</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="benefits-list">
         <!-- Benefits will be populated here -->
       </div>
@@ -72,9 +105,9 @@
   </section>
 
   <!-- FEATURES -->
-  <section class="bg-gray-50 py-16">
+  <section class="bg-gray-50 py-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12" id="features-title">Features</h2>
+      <h2 class="text-3xl font-bold text-center mb-12" id="features-title">Our Features</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="features-list">
         <!-- Features will be populated here -->
       </div>
@@ -82,7 +115,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="bg-white py-16">
+  <section class="bg-white py-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" id="how-it-works-title">How It Works</h2>
       <div class="flex flex-col md:flex-row md:space-x-4" id="how-it-works-steps">
@@ -92,7 +125,7 @@
   </section>
 
   <!-- TESTIMONIAL/USE CASE -->
-  <section class="bg-gray-50 py-16">
+  <section class="bg-gray-50 py-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" id="testimonials-title">Testimonials</h2>
       <div class="space-y-8" id="testimonials-list">
@@ -102,15 +135,17 @@
   </section>
 
   <!-- CALL TO ACTION -->
-  <section class="bg-blue-600 py-16">
+  <section class="bg-blue-600 py-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-white mb-4" id="cta-title">Ready to Get Started?</h2>
-      <a href="#" id="cta-button" class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg">Book a Demo</a>
+      <a href="#" id="cta-button" class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg hover:bg-gray-200 transition duration-300">
+        Book a Demo
+      </a>
     </div>
   </section>
 
   <!-- FAQS -->
-  <section class="bg-white py-16">
+  <section class="bg-white py-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" id="faqs-title">Frequently Asked Questions</h2>
       <div class="space-y-6" id="faqs-list">
@@ -120,7 +155,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-gray-800 text-gray-200 py-8">
+  <footer class="bg-gray-800 text-gray-200 py-8 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
       <div id="footer-links" class="mb-4 md:mb-0">
         <!-- Footer links will be populated here -->
@@ -145,15 +180,15 @@
         })
         .then(data => {
           // NAV
-          document.getElementById('nav-logo').textContent = data.nav.logo;
+          document.getElementById('nav-logo').innerHTML = \`<i class="fas fa-rocket mr-2"></i> \${data.nav.logo}\`;
           const navLinks = data.nav.links;
           const navContainer = document.getElementById('nav-links');
           const mobileNavContainer = document.getElementById('mobile-nav-links');
           navLinks.forEach(link => {
             const a = document.createElement('a');
             a.href = link.href;
-            a.textContent = link.text;
-            a.className = 'text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium';
+            a.innerHTML = \`<i class="\${link.icon} mr-1"></i> \${link.text}\`; // Added icons
+            a.className = 'text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center';
             navContainer.appendChild(a.cloneNode(true));
             mobileNavContainer.appendChild(a);
           });
@@ -190,11 +225,14 @@
           const benefitsList = document.getElementById('benefits-list');
           data.benefits.items.forEach(benefit => {
             const div = document.createElement('div');
-            div.className = 'bg-white p-6 rounded-lg shadow';
-            div.innerHTML = `
-              <h3 class="text-xl font-semibold mb-2">${benefit.title}</h3>
-              <p>${benefit.description}</p>
-            `;
+            div.className = 'bg-white p-6 rounded-lg shadow transform hover:-translate-y-2 transition duration-300';
+            div.innerHTML = \`
+              <div class="text-blue-600 mb-4">
+                <i class="\${benefit.icon} text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">\${benefit.title}</h3>
+              <p>\${benefit.description}</p>
+            \`;
             benefitsList.appendChild(div);
           });
 
@@ -203,11 +241,14 @@
           const featuresList = document.getElementById('features-list');
           data.features.items.forEach(feature => {
             const div = document.createElement('div');
-            div.className = 'bg-white p-6 rounded-lg shadow';
-            div.innerHTML = `
-              <h3 class="text-xl font-semibold mb-2">${feature.title}</h3>
-              <p>${feature.description}</p>
-            `;
+            div.className = 'bg-white p-6 rounded-lg shadow transform hover:-translate-y-2 transition duration-300';
+            div.innerHTML = \`
+              <div class="text-blue-600 mb-4">
+                <i class="\${feature.icon} text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">\${feature.title}</h3>
+              <p>\${feature.description}</p>
+            \`;
             featuresList.appendChild(div);
           });
 
@@ -217,11 +258,11 @@
           data.howItWorks.steps.forEach(step => {
             const div = document.createElement('div');
             div.className = 'flex flex-col items-center text-center mb-8 md:mb-0';
-            div.innerHTML = `
-              <div class="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center mb-4">${step.number}</div>
-              <h3 class="text-xl font-semibold mb-2">${step.title}</h3>
-              <p>${step.description}</p>
-            `;
+            div.innerHTML = \`
+              <div class="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center mb-4 animate-pulse">\${step.number}</div>
+              <h3 class="text-xl font-semibold mb-2">\${step.title}</h3>
+              <p>\${step.description}</p>
+            \`;
             stepsContainer.appendChild(div);
           });
 
@@ -231,13 +272,16 @@
           data.testimonials.items.forEach(testimonial => {
             const div = document.createElement('div');
             div.className = 'bg-white p-6 rounded-lg shadow';
-            div.innerHTML = `
-              <p class="italic">"${testimonial.quote}"</p>
-              <div class="mt-4">
-                <p class="font-semibold">${testimonial.author}</p>
-                <p class="text-sm text-gray-500">${testimonial.position}</p>
+            div.innerHTML = \`
+              <p class="italic">"\${testimonial.quote}"</p>
+              <div class="mt-4 flex items-center">
+                <img src="\${testimonial.photo}" alt="\${testimonial.author}" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                  <p class="font-semibold">\${testimonial.author}</p>
+                  <p class="text-sm text-gray-500">\${testimonial.position}</p>
+                </div>
               </div>
-            `;
+            \`;
             testimonialsList.appendChild(div);
           });
 
@@ -253,10 +297,10 @@
           data.faqs.items.forEach(faq => {
             const div = document.createElement('div');
             div.className = 'border-b pb-4';
-            div.innerHTML = `
-              <h3 class="text-xl font-semibold">${faq.question}</h3>
-              <p class="mt-2">${faq.answer}</p>
-            `;
+            div.innerHTML = \`
+              <h3 class="text-xl font-semibold">\${faq.question}</h3>
+              <p class="mt-2">\${faq.answer}</p>
+            \`;
             faqsList.appendChild(div);
           });
 
@@ -273,13 +317,18 @@
 
           const footerContact = data.footer.contact;
           const footerContactContainer = document.getElementById('footer-contact');
-          footerContactContainer.innerHTML = `
-            <p>${footerContact.address}</p>
-            <p>${footerContact.email}</p>
-            <p>${footerContact.phone}</p>
-          `;
+          footerContactContainer.innerHTML = \`
+            <p>\${footerContact.address}</p>
+            <p>\${footerContact.email}</p>
+            <p>\${footerContact.phone}</p>
+          \`;
         })
-        .catch(error => console.error('Error loading config.json:', error));
+        .catch(error => {
+          console.error('Error loading config.json:', error);
+          // Display an error message to the user
+          const body = document.querySelector('body');
+          body.innerHTML = '<p class="text-center text-red-500 mt-10">Failed to load the landing page content. Please try again later.</p>';
+        });
     });
   </script>
 </body>
